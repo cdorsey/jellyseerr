@@ -66,6 +66,7 @@ jobs:
       #     username: ${{ secrets.DOCKER_USERNAME }}
       #     password: ${{ secrets.DOCKER_TOKEN }}
       - name: Docker meta
+        id: meta
         uses: docker/metadata-action@v5
         with:
           images: |
@@ -149,7 +150,7 @@ jobs:
   discord:
     name: Send Discord Notification
     needs: semantic-release
-    if: never()
+    if: false
     runs-on: ubuntu-22.04
     steps:
       - name: Get Build Job Status
