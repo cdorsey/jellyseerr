@@ -212,6 +212,12 @@
           "message": "chore(release): ${nextRelease.version}"
         }
       ],
+      [
+        "@semantic-release/github",
+        {
+          "addReleases": "bottom"
+        }
+      ]
     ],
     "branches": [
       "main",
@@ -219,19 +225,6 @@
     ],
     "npmPublish": false,
     "publish": [
-      {
-        "path": "semantic-release-docker-buildx",
-        "buildArgs": {
-          "COMMIT_TAG": "$GIT_SHA"
-        },
-        "imageNames": [
-          "fallenbagel/jellyseerr"
-        ],
-        "platforms": [
-          "linux/amd64",
-          "linux/arm64"
-        ]
-      },
       "@semantic-release/github"
     ]
   }
