@@ -212,16 +212,10 @@
           "message": "chore(release): ${nextRelease.version}"
         }
       ],
-      "semantic-release-docker-buildx",
-      [
-        "@semantic-release/github",
-        {
-          "addReleases": "bottom"
-        }
-      ]
     ],
     "branches": [
-      "main"
+      "main",
+      "semver-docker-tags"
     ],
     "npmPublish": false,
     "publish": [
